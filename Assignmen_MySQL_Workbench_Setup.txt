@@ -1,0 +1,4 @@
+select name from names;
+INSERT INTO	names(name) VALUES('Saiffallah');
+insert into names (name) values('Andrea'),('Jose'),('Fernando');
+delete from names where id=5;
