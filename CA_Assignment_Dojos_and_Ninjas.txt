@@ -1,0 +1,63 @@
+-- Query: Create 3 new dojos
+INSERT INTO dojos (name) VALUES ('Kodokan');
+INSERT INTO dojos (name) VALUES ('Aikikai');
+INSERT INTO dojos (name) VALUES ('Noma Dojo');
+
+-- Query: Delete the 3 dojos you just created
+DELETE FROM dojos WHERE dojos.id = 1;
+DELETE FROM dojos WHERE dojos.id = 2;
+DELETE FROM dojos WHERE dojos.id = 3;
+
+-- Query: Create 3 more dojos
+INSERT INTO dojos (name) VALUES ('Akhara');
+INSERT INTO dojos (name) VALUES ('Dojang');
+INSERT INTO dojos (name) VALUES ('Kalari');
+
+-- Query: Retrieve all dojos
+SELECT * FROM dojos;
+
+-- Query: Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Hattori','Hanzo','54','4');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Hatsumi','Mazaaki','90','4');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Momochi','Sandayu','70','4');
+
+-- Query: Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Mochizuki','Chiyome','60','5');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Jinichi','Kawakami','74','5');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Katō','Danzō','50','5');
+
+-- Query: Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Tateoka','Doshun','65','6');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Goémon','Ishikawa','80','6');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Fuma','Kotaro','58','6');
+
+-- Query: Retrieve all the ninjas
+SELECT * FROM ninjas;
+
+-- Query: Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas 
+ORDER BY dojo_id asc;
+
+-- Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas 
+ORDER BY dojo_id desc;
+
+-- Query: Retrieve the last ninja's dojo
+SELECT *
+FROM ninjas
+ORDER BY id desc
+LIMIT 1;
+
+-- Query: Use a JOIN to retrieve the ninja with id 6 as well as the data from its dojo. 
+-- Be sure to do this in one query using a join statement.
+SELECT dojos.name AS Dojo_Name, ninjas.first_name, ninjas.last_name,age
+FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id
+WHERE ninjas.id = 6;
+
+-- Query: Use a JOIN to retrieve all the ninjas as well as that ninja's dojo, note, 
+-- you will see repeated data on dojos as a dojo can have many ninjas!
+SELECT GROUP_CONCAT(ninjas.first_name, ' ', ninjas.last_name, ' ',ninjas.age) AS ninja, dojos.name AS Dojo
+FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+GROUP BY dojos.id;
