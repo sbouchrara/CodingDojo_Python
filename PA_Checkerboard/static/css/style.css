@@ -1,0 +1,25 @@
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+}
+
+#box {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+}
+#titre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    /* flex-wrap: wrap; */
+}
+
+#lignetd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

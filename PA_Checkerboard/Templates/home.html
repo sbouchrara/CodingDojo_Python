@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Ckeckerboard</title>
+</head>
+
+<body>
+    <div id="titre">
+        <h1 style="color: {{pcolor2}}; background-color: {{pcolor1}};">*** Checkerboard ***</h1>
+    </div>  
+    <div id="container">
+        <table id="tableau">
+            <tr id="lignetr">
+                {% for j in range(0,numtr) %}
+                    <td id="lignetd">
+                        
+                        {% for i in range(0,numtd) %}
+                            {% if ((j+1) % 2) == 0 %}
+                                {% if ((i+1) % 2) == 0 %}
+                                <div id="box" style="background-color: {{pcolor1}};"> </div>
+                                {%else%}
+                                <div id="box" style="background-color: {{pcolor2}};"> </div>
+                                {% endif%}
+                            {%else%}
+                                {% if ((i+1) % 2) == 0 %}
+                                <div id="box" style="background-color: {{pcolor2}};"> </div>
+                                {%else%}
+                                <div id="box" style="background-color: {{pcolor1}};"> </div>
+                                {% endif%}
+                            {% endif%}
+                        {% endfor %}
+                        
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+        
+        <div class="clear"> </div>
+    </div>
+</body>
+</html>
