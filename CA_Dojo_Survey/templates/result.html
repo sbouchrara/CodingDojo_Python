@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Result</title>
+</head>
+<style>
+    #container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #box {
+        display: flex;
+        width: 400px;
+        background-color: #33393E;
+        margin: 25px;
+        padding: 35px;
+    }
+</style>
+<body>
+    <div id="container">
+        <div id="box" >
+            <div >
+                <h3 style="color: #2471A3;">{{session['name']}}</h3>
+                
+                <a style="color: white;">Dojo location: {{session['location']}}</a><br>
+                <a style="color: white;">Favorite Language: {{session['language']}}</a><br>
+                <a style="color: white;">Comments: {{session['comments']}}</a>
+                <br>
+                <br>
+                <a href="/">Home</a>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>

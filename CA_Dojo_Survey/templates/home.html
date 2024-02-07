@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dojo Survey</title>
+</head>
+<style>
+    #container{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+
+    }
+    #box_1{
+        display: flex;
+        /* align-items: center;
+        justify-content: center; */
+        width: 400px;
+        background-color: #33393E;
+        margin: 25px;
+        padding: 35px;
+    }
+    
+
+</style>
+<body>
+    <div id="container" >
+        
+            <div id="box_1" >
+                
+                <form action='/process' method='post'>
+                    <h2 style="color: chocolate;">Dojo Survey</h2><br>
+                    <label for='name' style="color: blanchedalmond;">Your Name:</label><br>
+                    <input type='text' name='name' placeholder="Your name" style="width: 300px;"><br>
+                    <br>
+                    <label for='locations' style="color: blanchedalmond;">Dojo Location:</label><br>
+                    <select class="form-select form-select-lg mb-3"  name="location" id="location" style="width: 300px;">
+                        <option selected>-- Select A Location --</option>
+                        <option value="tunis">Tunis</option>
+                        <option value="ben arous">Ben Arous</option>
+                        <option value="ariana">Ariana</option>
+                        <option value="sousse">Sousse</option>
+                        <option value="sfax">Sfax</option>
+                    </select>
+            
+                    <br>
+                    <label for='favorite_language' style="color: blanchedalmond;">Favorite Language:</label><br>
+                    <select class="form-select form-select-lg mb-3" name="language" id="language" style="width: 300px;"> 
+                        <option selected>-- Select A Language --</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="csharp">C#</option>
+                    </select>
+                    <br>
+            
+                    <label for="comments" style="color: blanchedalmond;">Comments:</label>
+                    <textarea id="comments" name="comments" rows="5" cols="38"> </textarea>
+                    <br>
+                    <br>
+            
+                    <input class="btn btn-primary mb-2" type='submit' value='Submit'>
+                </form>
+
+                
+            </div>
+
+    </div>
+
+    
+</body>
+</html>
